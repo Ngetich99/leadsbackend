@@ -1,0 +1,3 @@
+web: gunicorn crm_backend.wsgi:application
+worker: celery -A crm_backend worker --loglevel=info
+beat: celery -A crm_backend beat --loglevel=info
